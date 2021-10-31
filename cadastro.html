@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="style.css">
+
+        <title>Document</title>
+
+    </head>
+
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+                <!-- <a href="#!" class="brand-logo right">Logo</a> -->
+                <ul class="left hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="login.html">Cake's Radar</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col s3">
+
+            </div>
+
+            <div class="col s6">
+
+                <h2>Cadastrar Conta</h2>
+                <div class="input-field col s12">
+                    <label for="idNome">Nome: </label>
+                    <input type="text" id="idNome">
+                </div>
+
+                <div class="input-field col s12">
+                    <input id="idEmail" type="email" class="validate">
+                    <label for="idEmail">E-mail:</label>
+                    <span class="helper-text" data-error="siga o formato: exemplo@exemplo.com"
+                        data-success="correto"></span>
+                </div>
+
+                <div class="input-field col s12">
+                    <input id="idSenha" type="password" class="validate" autocomplete="off" minlength="8" maxlength="15"
+                        pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$])[a-zA-Z0-9@#$]{8,15}$" required>
+                    <label for="idSenha">Senha:</label>
+                    <span class="helper-text" data-error="formato incorreto" data-success="formato correto"></span>
+                    <p class="padrao">A senha deverá ter entre 8 e 15 caracteres, letras maiúsculas e
+                        minúsculas, números e um dos caracteres @#$.</p>
+                </div>
+
+                <div class="center-align">
+                    <button class="btn waves-effect waves-light" type="button" value="Cadastrar"
+                        id="btnCadastro">Cadastrar</button>
+                    <button class="btn waves-effect waves-light" type="button" value="Cancelar"
+                        id="btnCancelar">Cancelar</button>
+                </div>
+
+                <div class="center-align">
+                    <a href="login.html">
+                        <p>Após o cadastro, clique aqui para fazer login!</p>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col s3">
+
+            </div>
+        </div>
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <script>
+            var nomes = []
+            var emails = []
+            var senhas = []
+
+            var btnCadastro = document.getElementById("btnCadastro")
+            var btnCancelar = document.getElementById("btnCancelar")
+
+            function limparTela() {
+                document.getElementById("idNome").value = ""
+                document.getElementById("idEmail").value = ""
+                document.getElementById("idSenha").value = ""
+            }
+
+            btnCadastro.onclick = function Cadastrar() {
+
+                var nome = document.getElementById("idNome").value
+                var email = document.getElementById("idEmail").value
+                var senha = document.getElementById("idSenha").value
+
+                nomes.push(nome)
+                emails.push(email)
+                senhas.push(senha)
+
+                console.log(nomes)
+                console.log(emails)
+                console.log(senhas)
+
+                alert("Cadastro realizado com sucesso!");
+
+                limparTela()
+
+            }
+
+            btnCancelar.onclick = function () {
+                limparTela()
+            }
+
+        </script>
+    </body>
+
+</html>

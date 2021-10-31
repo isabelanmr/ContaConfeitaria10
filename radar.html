@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="style.css">
+
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <nav>
+            <div class="nav-wrapper">
+                <!-- <a href="#!" class="brand-logo right">Logo</a> -->
+                <ul class="left hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li class="active"><a href="login.html">Cake's Radar</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+
+            <div class="col s2">
+
+            </div>
+            <div class="col s6">
+                <form id="AddPizzatop" action="" method="GET">
+                    <div class="row">
+                        <div class="form">
+                            <div>
+                                <h3>Radar dos Bolos</h3>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <label for="tipoNome">Nome comercial:</label>
+                                <input type="text" id="tipoNome" name="nmTipoNome" required>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <label for="diametro">Tamanho (diâmetro em cm):</label>
+                                <input type="number" id="diametro" name="nmDiametro" min="0" required>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <label for="preco">Preço:</label>
+                                <input type="number" class="" id="preco" name="nmPreco" min="0" step="0.10" required>
+                            </div>
+
+                            <div>
+                                <output id="idOut"></output>
+                            </div>
+
+                            <div class="botoes center-align">
+                                <button class="btn waves-effect waves-light" type="button" value="Incluir"
+                                    id="btIdIncluir" onclick="cadastrar()">Incluir</button>
+                                <button class="btn waves-effect waves-light" type="reset" value="Limpar">Limpar</button>
+                                <button class="btn waves-effect waves-light" type="button" value="Calcular"
+                                    id="btIdCalcular" onclick="exibirRel()">Calcular</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col s4">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1389&q=80"
+                    width=500 alt="Imagem de bolo">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s1"></div>
+            <div class="col s10">
+                <figure class="figure">
+                    <table class="table tbClBolos centered" id="tbIdBolos">
+                        <thead id="thIdBolo">
+                            <tr class="trClBolo">
+                                <th class="thClNome" id="idNm">Nome comercial</th>
+                                <th class="thClTam" id="idTam">Tamanho (em cm)</th>
+                                <th class="thClPreco" id="idPrc">Preço</th>
+                                <th class="thClCb" id="idPrcCm2">R$ p / cm²</th>
+                                <th class="thClDif" id="idDiff">Diferença %</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tboIdLinha">
+
+                        </tbody>
+
+                    </table>
+                    <figcaption class="figure-caption">Tabela de relação custo-benefício (CB) entre bolos.</figcaption>
+                </figure>
+
+            </div>
+
+            <div class="col s1"></div>
+
+
+        </div>
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
